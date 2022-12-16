@@ -12,14 +12,6 @@ public class Main {
         QueueClass<String> myQueue = new QueueClass<>();
         StackClass<Integer> myStack = new StackClass<>();
         Queue<Integer> qwe = new PriorityQueue<>();
-
-//        Object[] ar = new Object[]{1,2};
-//        Integer in = 1;
-//        System.out.println(ar[0].getClass());
-//        System.out.println(in.getClass());
-        /*
-        должно быть отсортировано!!!!!
-         */
         PriorityQueueClass<Integer> prior = new PriorityQueueClass<>();
 //        System.out.println(prior.isEmpty());
 //        System.out.println(prior);
