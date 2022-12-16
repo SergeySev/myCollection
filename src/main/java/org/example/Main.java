@@ -38,9 +38,5 @@ public class Main {
 //        System.out.println(prior.poll());
 //        System.out.println(prior.remove(4));
 //        prior.clear();
-
-
-
-
     }
 }
