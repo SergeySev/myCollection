@@ -8,6 +8,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+        // Танец на костылях, но зато самостоятельно)
         QueueClass<String> myQueue = new QueueClass<>();
         StackClass<Integer> myStack = new StackClass<>();
         Queue<Integer> qwe = new PriorityQueue<>();
