@@ -1,6 +1,5 @@
 package org.example;
 
-import org.example.myQueue.MyStack;
 import org.example.myQueue.PriorityQueueClass;
 import org.example.myQueue.QueueClass;
 import org.example.myQueue.StackClass;
