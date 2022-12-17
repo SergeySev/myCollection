@@ -30,5 +30,14 @@ public class Main {
 //        System.out.println(prior.poll());
 //        System.out.println(prior.remove(4));
 //        prior.clear();
+//        prior.add(6);
+//        prior.add(8);
+//        prior.add(2);
+//        prior.offer(2);
+////        prior.offer(2);
+////        prior.offer(2);
+//        System.out.println(prior);
+//        prior.remove(2);
+//        System.out.println(prior);
     }
 }

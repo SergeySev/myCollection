@@ -5,7 +5,6 @@ import java.util.*;
 public class PriorityQueueClass<T extends Comparable> implements MyPriorityQueue {
 
     private Object[] queue;
-    private int index = 0;
     private final int size = 10;
     private Comparator<T> comparator;
 
@@ -34,11 +33,10 @@ public class PriorityQueueClass<T extends Comparable> implements MyPriorityQueue
         if (element == null) {
             throw new NullPointerException();
         }
-        if (this.index == this.queue.length - 1) {
+        if (size() == this.queue.length - 1) {
             grow();
         }
-        this.queue[index] = element;
-        this.index++;
+        this.queue[size()] = element;
         sort();
     }
 
@@ -81,7 +79,6 @@ public class PriorityQueueClass<T extends Comparable> implements MyPriorityQueue
     @Override
     public void clear() {
         this.queue = new Object[10];
-        this.index = 0;
     }
 
     @Override
@@ -175,10 +172,10 @@ public class PriorityQueueClass<T extends Comparable> implements MyPriorityQueue
     public boolean remove(Object element) {
         Object[] newArray = new Object[queue.length - 1];
         boolean found = false;
-        for (int i = 0, j = 0; i < newArray.length - 1 && j < this.queue.length && this.queue[j] != null; i++, j++) {
-            if (!this.queue[j].equals(element)) {
+        for (int i = 0, j = 0; i < newArray.length && j < this.queue.length && this.queue[j] != null; i++, j++) {
+            if (found || !this.queue[j].equals(element)) {
                 newArray[i] = this.queue[j];
-            } else if (this.queue[i].equals(element) && !found) {
+            } else if (!found) {
                 newArray[i] = this.queue[++j];
                 found = true;
             }
@@ -206,26 +203,26 @@ public class PriorityQueueClass<T extends Comparable> implements MyPriorityQueue
         return this.queue;
     }
 
-    @Override
-    public String toString() {
-        if (this.queue.length == 0) return "[]";
-        String str = "";
-        str += ("[");
-        int i = 0;
-        while (i < this.queue.length && this.queue[i] != null) {
-            if (str.length() > 1) {
-                str += "," + this.queue[i];
-            } else str += this.queue[i];
-            i++;
-        }
-        str += "]";
-        return str;
-    }
-
 //    @Override
 //    public String toString() {
-//        return "PriorityQueueClass{" +
-//                "queue=" + Arrays.toString(queue) +
-//                '}';
+//        if (this.queue.length == 0) return "[]";
+//        String str = "";
+//        str += ("[");
+//        int i = 0;
+//        while (i < this.queue.length && this.queue[i] != null) {
+//            if (str.length() > 1) {
+//                str += "," + this.queue[i];
+//            } else str += this.queue[i];
+//            i++;
+//        }
+//        str += "]";
+//        return str;
 //    }
+
+    @Override
+    public String toString() {
+        return "PriorityQueueClass{" +
+                "queue=" + Arrays.toString(queue) +
+                '}';
+    }
 }
