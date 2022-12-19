@@ -22,6 +22,7 @@ public class Main {
         prior.add(2);
         prior.add(1);
         System.out.println(prior);
+        System.out.println(Arrays.toString(prior.toArray()));
 //        System.out.println(prior.contains(6));
 //        System.out.println(prior.isEmpty());
 //        System.out.println(prior.iterator());

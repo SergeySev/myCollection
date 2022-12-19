@@ -200,29 +200,27 @@ public class PriorityQueueClass<T extends Comparable> implements MyPriorityQueue
 
     @Override
     public Object[] toArray() {
-        return this.queue;
+        Object[] newArray = new Object[size()];
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = this.queue[i];
+        }
+        return newArray;
     }
-
-//    @Override
-//    public String toString() {
-//        if (this.queue.length == 0) return "[]";
-//        String str = "";
-//        str += ("[");
-//        int i = 0;
-//        while (i < this.queue.length && this.queue[i] != null) {
-//            if (str.length() > 1) {
-//                str += "," + this.queue[i];
-//            } else str += this.queue[i];
-//            i++;
-//        }
-//        str += "]";
-//        return str;
-//    }
 
     @Override
     public String toString() {
-        return "PriorityQueueClass{" +
-                "queue=" + Arrays.toString(queue) +
-                '}';
+        if (this.queue.length == 0) return "[]";
+        String str = "";
+        str += ("[");
+        int i = 0;
+        while (i < this.queue.length && this.queue[i] != null) {
+            if (str.length() > 1) {
+                str += "," + this.queue[i];
+            } else str += this.queue[i];
+            i++;
+        }
+        str += "]";
+        return str;
     }
+
 }
